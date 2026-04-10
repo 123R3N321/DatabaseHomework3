@@ -1,0 +1,219 @@
+Dropping and recreating database: ml_hackathon
+DROP DATABASE
+CREATE DATABASE
+Loading schema and base data...
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:5: NOTICE:  table "eliteparticipant" does not exist, skipping
+DROP TABLE
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:6: NOTICE:  table "leaderboard" does not exist, skipping
+DROP TABLE
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:7: NOTICE:  table "evaluates" does not exist, skipping
+DROP TABLE
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:8: NOTICE:  table "submission" does not exist, skipping
+DROP TABLE
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:9: NOTICE:  table "round" does not exist, skipping
+DROP TABLE
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:10: NOTICE:  table "teammember" does not exist, skipping
+DROP TABLE
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:11: NOTICE:  table "challenge" does not exist, skipping
+DROP TABLE
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:12: NOTICE:  table "judge" does not exist, skipping
+DROP TABLE
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:13: NOTICE:  table "team" does not exist, skipping
+DROP TABLE
+psql:/home/ren/projects/databaseStuff/p1_schema.sql:14: NOTICE:  table "participant" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+COPY 12
+COPY 10
+COPY 5
+COPY 12
+COPY 43
+COPY 38
+COPY 4
+COPY 114
+COPY 16
+Running Problem 1(b) queries...
+ challenge_id | num_participants_final 
+--------------+------------------------
+            1 |                      9
+            2 |                      7
+            3 |                      6
+            4 |                      9
+            5 |                      9
+(5 rows)
+
+ challenge_id | round_id | round_name |   avg_score_round   
+--------------+----------+------------+---------------------
+            1 |        2 | Semi-Final | 78.0000000000000000
+(1 row)
+
+ pid | participant_name 
+-----+------------------
+   1 | Alice Chen
+   2 | Bob Smith
+   3 | Carol Davis
+   4 | Dan Lee
+   5 | Eva Patel
+   6 | Frank Wu
+   7 | Grace Kim
+   8 | Henry Brown
+   9 | Irene Zhang
+  10 | Jack Nguyen
+  11 | Karen Torres
+  12 | Leo Martins
+(12 rows)
+
+ challenge_id | round_id | jid |     judge_name     | lowest_score 
+--------------+----------+-----+--------------------+--------------
+            1 |        1 |   1 | Dr. Maria Lopez    |        60.00
+            1 |        2 |   3 | Dr. Sunita Rao     |        63.00
+            1 |        3 |   3 | Dr. Sunita Rao     |        76.00
+            2 |        1 |   2 | Prof. James Okafor |        68.00
+            2 |        2 |   2 | Prof. James Okafor |        70.00
+            3 |        1 |   3 | Dr. Sunita Rao     |        75.00
+            3 |        2 |   3 | Dr. Sunita Rao     |        78.00
+            3 |        3 |   3 | Dr. Sunita Rao     |        80.00
+            4 |        1 |   2 | Prof. James Okafor |        70.00
+            4 |        2 |   3 | Dr. Sunita Rao     |        70.00
+            5 |        1 |   2 | Prof. James Okafor |        69.00
+            5 |        2 |   4 | Dr. Shintaro Oyama |        70.00
+(12 rows)
+
+ pid1 | pid2 | shared_rounds 
+------+------+---------------
+    1 |    3 |             3
+    1 |    4 |             3
+    1 |    5 |             5
+    1 |    6 |             5
+    1 |    7 |             4
+    1 |    8 |             5
+    1 |    9 |             4
+    1 |   10 |             7
+    1 |   12 |             6
+    2 |    3 |             7
+    2 |    4 |             5
+    2 |    5 |             8
+    2 |    6 |             7
+    2 |    7 |             9
+    2 |    8 |             7
+    2 |    9 |             7
+    2 |   10 |             9
+    2 |   11 |             3
+    2 |   12 |             4
+    3 |    5 |             3
+    3 |    6 |             3
+    3 |    7 |             4
+    3 |    9 |             4
+    3 |   10 |             7
+    3 |   11 |             7
+    3 |   12 |             6
+    4 |    5 |             8
+    4 |    6 |             5
+    4 |    7 |             9
+    4 |    8 |             4
+    4 |    9 |             5
+    4 |   10 |             7
+    4 |   11 |             8
+    4 |   12 |             6
+    5 |    7 |             4
+    5 |    8 |             5
+    5 |    9 |             5
+    5 |   11 |             6
+    5 |   12 |             4
+    6 |    7 |             6
+    6 |    8 |             7
+    6 |   11 |             5
+    6 |   12 |             6
+    7 |    9 |             3
+    7 |   10 |             4
+    7 |   11 |             7
+    8 |   10 |             5
+    8 |   11 |             5
+    8 |   12 |             4
+    9 |   11 |             4
+   10 |   11 |             7
+   10 |   12 |             8
+(52 rows)
+
+     domain      | num_participants 
+-----------------+------------------
+ Computer Vision |               12
+ NLP             |               11
+ Tabular         |                6
+(3 rows)
+
+ pid | participant_name | skill_level  
+-----+------------------+--------------
+   3 | Carol Davis      | Intermediate
+   4 | Dan Lee          | Beginner
+   7 | Grace Kim        | Intermediate
+   8 | Henry Brown      | Beginner
+  11 | Karen Torres     | Intermediate
+  12 | Leo Martins      | Beginner
+(6 rows)
+
+Creating triggers for leaderboard and elite maintenance...
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+psql:/home/ren/projects/databaseStuff/p1_triggers.sql:108: NOTICE:  trigger "evaluates_after_insert_leaderboard" for relation "evaluates" does not exist, skipping
+DROP TRIGGER
+CREATE TRIGGER
+CREATE FUNCTION
+psql:/home/ren/projects/databaseStuff/p1_triggers.sql:129: NOTICE:  trigger "leaderboard_after_insupd_elite" for relation "leaderboard" does not exist, skipping
+DROP TRIGGER
+CREATE TRIGGER
+Applying *_upd.csv updates (Problem 1(d))...
+COPY 4
+COPY 2
+COPY 6
+COPY 6
+COPY 18
+INSERT 0 19
+TRUNCATE TABLE
+INSERT 0 6
+Final Leaderboard:
+ challenge_id | team_id | rank | c_score 
+--------------+---------+------+---------
+            1 |      11 |    1 |   91.44
+            1 |       3 |    2 |   89.56
+            1 |       1 |    3 |   82.33
+            1 |       2 |    4 |   75.33
+            1 |       4 |    5 |   62.50
+            2 |      12 |    1 |   85.50
+            2 |       6 |    2 |   80.50
+            2 |       7 |    3 |   74.50
+            2 |       5 |    4 |   71.17
+            3 |      11 |    1 |   95.00
+            3 |       9 |    2 |   90.78
+            3 |       8 |    3 |   85.44
+            3 |      10 |    4 |   79.22
+            4 |       1 |    1 |   88.50
+            4 |       3 |    2 |   80.00
+            4 |       4 |    3 |   71.50
+            5 |       4 |    1 |   82.50
+            5 |       2 |    2 |   74.83
+            5 |       6 |    3 |   70.67
+(19 rows)
+
+Final EliteParticipant:
+ pid 
+-----
+   1
+   2
+   4
+   7
+   8
+  10
+(6 rows)
+
+All done.

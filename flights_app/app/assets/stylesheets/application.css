@@ -1,0 +1,76 @@
+/*I love deadbeef color scheme!*/
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 960px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+
+  background-color: #000000;
+  color: #cfaaf0;
+}
+
+a {
+  color: #8abcde;
+}
+
+.flash {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  color: #f1f1f1;
+}
+
+.flash.notice {
+  background: #deaddd;
+}
+
+.flash.alert {
+  background: #beefff;
+}
+
+.search-form div {
+  margin-bottom: 0.75rem;
+}
+
+.search-form label {
+  display: inline-block;
+  min-width: 10rem;
+}
+
+input,
+select,
+button,
+textarea {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.flight-results {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background-color: #1a1a1a;
+}
+
+.flight-results th,
+.flight-results td {
+  border: 1px solid #444;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.flight-results th {
+  background-color: #222;
+}
+
+.flight-detail dt {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.flight-detail dd {
+  margin-left: 0;
+}

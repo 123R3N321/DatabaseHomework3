@@ -1,0 +1,26 @@
+ member_id | name | total_spent | hypothetical_savings | extra_fee 
+-----------+------+-------------+----------------------+-----------
+(0 rows)
+
+ warehouse_id |             address              
+--------------+----------------------------------
+            1 | 123 Main St, Seattle, WA
+            3 | 789 Industrial Ave, Portland, OR
+(2 rows)
+
+ sku  |         name          | warehouse_id |             address              
+------+-----------------------+--------------+----------------------------------
+ 1001 | Kirkland Paper Towels |            1 | 123 Main St, Seattle, WA
+ 1001 | Kirkland Paper Towels |            2 | 456 Market Rd, Bellevue, WA
+ 1001 | Kirkland Paper Towels |            3 | 789 Industrial Ave, Portland, OR
+ 1002 | Kirkland Olive Oil    |            1 | 123 Main St, Seattle, WA
+ 1002 | Kirkland Olive Oil    |            2 | 456 Market Rd, Bellevue, WA
+ 1003 | Organic Apples 5lb    |            3 | 789 Industrial Ave, Portland, OR
+(6 rows)
+
+ member_id |   name   | num_warehouses | total_spent 
+-----------+----------+----------------+-------------
+         4 | Dan Lee  |              2 |      609.99
+         6 | Frank Wu |              2 |     1129.99
+(2 rows)
+

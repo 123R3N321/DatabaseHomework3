@@ -1,0 +1,59 @@
+Dropping and recreating database: flights_db
+DROP DATABASE
+CREATE DATABASE
+Loading flights schema and data...
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 12
+INSERT 0 4
+INSERT 0 10
+INSERT 0 12
+INSERT 0 25
+INSERT 0 5
+INSERT 0 15
+INSERT 0 4
+INSERT 0 10
+INSERT 0 14
+INSERT 0 6
+INSERT 0 4
+INSERT 0 3
+INSERT 0 4
+INSERT 0 5
+INSERT 0 7
+INSERT 0 3
+Adding foreign keys...
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+Creating views and running Problem 2 queries...
+CREATE VIEW
+ flight_number | departure_date | total_passengers 
+---------------+----------------+------------------
+ AA101         | 2025-12-31     |               15
+(1 row)
+
+ airport_code | total_arriving_passengers 
+--------------+---------------------------
+ ATL          |                         5
+ JFK          |                         6
+ LAX          |                        19
+ LHR          |                         3
+ MIA          |                        21
+ NRT          |                         4
+ ORD          |                        10
+ SFO          |                         3
+(8 rows)
+
+ flight_number | departure_date | origin_code | dest_code | capacity | total_passengers |      load_factor       
+---------------+----------------+-------------+-----------+----------+------------------+------------------------
+ DL410         | 2025-12-31     | ATL         | MIA       |       15 |               14 | 0.93333333333333333333
+ UA302         | 2025-12-31     | SFO         | ORD       |       10 |               10 | 1.00000000000000000000
+(2 rows)
+
+CREATE VIEW
+psql:/home/ren/projects/databaseStuff/p2_views.sql:114: ERROR:  update or delete on table "airport" violates foreign key constraint "flightservice_origin_fk" on table "flightservice"
+DETAIL:  Key (airport_code)=(ORD) is still referenced from table "flightservice".

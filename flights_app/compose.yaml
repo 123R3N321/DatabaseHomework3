@@ -1,0 +1,37 @@
+# From this directory: docker compose up --build
+# Teardown (containers + network): docker compose down
+# Teardown and delete Postgres data: docker compose down -v
+#
+# RAILS_MASTER_KEY: project `.env` (gitignored) or see compose.env.example + README.
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: flights
+      POSTGRES_PASSWORD: flights_secret
+      POSTGRES_DB: flights_db
+    volumes:
+      - flights_pg_data:/var/lib/postgresql/data
+      - ../p2/flights.sql:/docker-entrypoint-initdb.d/01-flights.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flights -d flights_db"]
+      interval: 2s
+      timeout: 5s
+      retries: 20
+      start_period: 5s
+
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://flights:flights_secret@db:5432/flights_db
+      # Set in a project `.env` file (Compose loads it for substitution) or export in your shell.
+      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY:?Set RAILS_MASTER_KEY in .env or your environment}
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  flights_pg_data:

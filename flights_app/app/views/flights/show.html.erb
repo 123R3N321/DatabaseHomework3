@@ -1,0 +1,26 @@
+<% fs = @flight.flight_service %>
+<% ac = @flight.aircraft %>
+<% booked = @flight.booked_seats_count %>
+<% available = @flight.available_seats %>
+
+<h1>Flight <%= @flight.flight_number %></h1>
+<p><%= link_to "Back to search", root_path %></p>
+
+<dl class="flight-detail">
+  <dt>Departure date</dt>
+  <dd><%= @flight.departure_date %></dd>
+  <dt>Origin</dt>
+  <dd><%= fs.origin_code %></dd>
+  <dt>Destination</dt>
+  <dd><%= fs.dest_code %></dd>
+  <dt>Departure time (GMT)</dt>
+  <dd><%= fs.departure_time&.strftime("%H:%M") %></dd>
+  <dt>Aircraft type</dt>
+  <dd><%= @flight.plane_type %></dd>
+  <dt>Capacity</dt>
+  <dd><%= ac.capacity %></dd>
+  <dt>Booked seats</dt>
+  <dd><%= booked %></dd>
+  <dt>Available seats</dt>
+  <dd><%= available %></dd>
+</dl>

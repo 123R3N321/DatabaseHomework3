@@ -1,0 +1,61 @@
+<h1>Flight search</h1>
+<p>All times are <strong>GMT</strong>.</p>
+
+<%= form_with url: search_flights_path, method: :post, local: true, class: "search-form" do |f| %>
+  <div>
+    <%= label_tag :origin, "Source airport code" %>
+    <%= text_field_tag :origin, params[:origin], maxlength: 3, required: true, placeholder: "e.g. JFK" %>
+  </div>
+  <div>
+    <%= label_tag :destination, "Destination airport code" %>
+    <%= text_field_tag :destination, params[:destination], maxlength: 3, required: true, placeholder: "e.g. LAX" %>
+  </div>
+  <div>
+    <%= label_tag :start_date, "Start date" %>
+    <%= date_field_tag :start_date, params[:start_date] || Date.today, required: true %>
+  </div>
+  <div>
+    <%= label_tag :end_date, "End date" %>
+    <%= date_field_tag :end_date, params[:end_date] || Date.today, required: true %>
+  </div>
+  <div>
+    <%= submit_tag "Search flights" %>
+  </div>
+<% end %>
+
+<% if @flights %>
+  <h2>Results</h2>
+  <% if @flights.empty? %>
+    <p>No flights found for this route and date range.</p>
+  <% else %>
+    <table class="flight-results">
+      <thead>
+        <tr>
+          <th>Flight</th>
+          <th>Departure date</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Departure time (GMT)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @flights.each do |flight| %>
+          <% fs = flight.flight_service %>
+          <tr>
+            <td>
+              <%= link_to flight.flight_number,
+                  flight_path(
+                    flight_number: flight.flight_number,
+                    departure_date: flight.departure_date.iso8601
+                  ) %>
+            </td>
+            <td><%= flight.departure_date %></td>
+            <td><%= fs.origin_code %></td>
+            <td><%= fs.dest_code %></td>
+            <td><%= fs.departure_time&.strftime("%H:%M") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>
