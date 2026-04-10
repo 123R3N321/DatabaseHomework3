@@ -1,0 +1,19 @@
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+/home/ren/.rbenv/versions/3.4.6/bin/ruby extconf.rb
+checking for rb_ext_ractor_safe() in ruby.h... yes
+creating Makefile
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-gqj9vn sitelibdir\=./.gem.20260409-17134-gqj9vn clean
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-gqj9vn sitelibdir\=./.gem.20260409-17134-gqj9vn
+compiling escape.c
+linking shared-object erb/escape.so
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-gqj9vn sitelibdir\=./.gem.20260409-17134-gqj9vn install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20260409-17134-gqj9vn/erb
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/erb-6.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-gqj9vn sitelibdir\=./.gem.20260409-17134-gqj9vn clean

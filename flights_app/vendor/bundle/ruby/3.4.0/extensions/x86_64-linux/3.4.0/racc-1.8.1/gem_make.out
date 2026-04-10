@@ -1,0 +1,18 @@
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/home/ren/.rbenv/versions/3.4.6/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-5jga6g sitelibdir\=./.gem.20260409-17134-5jga6g clean
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-5jga6g sitelibdir\=./.gem.20260409-17134-5jga6g
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-5jga6g sitelibdir\=./.gem.20260409-17134-5jga6g install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20260409-17134-5jga6g/racc
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-5jga6g sitelibdir\=./.gem.20260409-17134-5jga6g clean

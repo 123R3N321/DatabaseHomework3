@@ -1,0 +1,19 @@
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+/home/ren/.rbenv/versions/3.4.6/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-p8q61i sitelibdir\=./.gem.20260409-17134-p8q61i clean
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-p8q61i sitelibdir\=./.gem.20260409-17134-p8q61i
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-p8q61i sitelibdir\=./.gem.20260409-17134-p8q61i install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20260409-17134-p8q61i/debug
+
+current directory: /home/ren/projects/databaseStuff/flights_app/vendor/bundle/ruby/3.4.0/gems/debug-1.11.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20260409-17134-p8q61i sitelibdir\=./.gem.20260409-17134-p8q61i clean
