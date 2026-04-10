@@ -70,7 +70,7 @@ Routes are declared in [`config/routes.rb`](config/routes.rb). The app is **serv
 | `start_date` | yes | ISO date (`YYYY-MM-DD`) |
 | `end_date` | yes | ISO date (`YYYY-MM-DD`) |
 
-Invalid search input returns **422** with the index template and flash messages; missing or invalid flight on show redirects to `/` with an alert.
+Invalid search input returns **422** with the index template and flash messages. A **422** on an otherwise valid search often means **CSRF / session** (e.g. production over HTTP without `FLIGHTS_HTTP_MODE`); missing or invalid flight on show redirects to `/` with an alert.
 
 ## Docker Compose
 
@@ -84,7 +84,9 @@ docker compose up --build
 
 Compose loads a local **`.env`** (gitignored) with `RAILS_MASTER_KEY` so you do not need to export anything. On a fresh clone, copy `compose.env.example` to `.env` and paste the value from `config/master.key`.
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) (or `http://127.0.0.1:3000`). Prefer that over `http://0.0.0.0:3000` in the browser; `0.0.0.0` is only the bind address for the server.
+
+The Compose stack sets **`FLIGHTS_HTTP_MODE=1`**, which turns off `force_ssl` / `assume_ssl` in production. Without that, plain HTTP would use **secure session cookies** that the browser never sends, so **CSRF checks fail** and `POST /flights/search` returns **422** even with a valid form.
 
 When finished:
 

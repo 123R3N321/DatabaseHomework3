@@ -27,6 +27,8 @@ services:
       - "3000:3000"
     environment:
       DATABASE_URL: postgres://flights:flights_secret@db:5432/flights_db
+      # Plain HTTP on port 3000 (no TLS in front of Puma). Keeps session/CSRF working in a browser.
+      FLIGHTS_HTTP_MODE: "1"
       # Set in a project `.env` file (Compose loads it for substitution) or export in your shell.
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY:?Set RAILS_MASTER_KEY in .env or your environment}
     depends_on:

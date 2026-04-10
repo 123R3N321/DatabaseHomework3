@@ -22,10 +22,15 @@ Rails.application.configure do
   # config.asset_host = "http://assets.example.com"
 
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
-  config.assume_ssl = true
-
-  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  # Docker Compose (and other plain-HTTP local runs) must disable these or the session cookie
+  # stays `secure` and browsers omit it on http:// — CSRF verification then fails with 422.
+  if ENV["FLIGHTS_HTTP_MODE"].present?
+    config.assume_ssl = false
+    config.force_ssl = false
+  else
+    config.assume_ssl = true
+    config.force_ssl = true
+  end
 
   # Skip http-to-https redirect for the default health check endpoint.
   # config.ssl_options = { redirect: { exclude: ->(request) { request.path == "/up" } } }
